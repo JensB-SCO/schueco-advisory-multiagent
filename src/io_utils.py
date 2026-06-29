@@ -30,6 +30,10 @@ def slugify(text: str) -> str:
         slug = slug.replace("--", "-")
     return slug.strip("-")[:80] or "output"
 
+def build_task_output_dir(task_path: str | Path, base_dir: str | Path = "outputs") -> Path:
+    task_file = Path(task_path)
+    return Path(base_dir) / slugify(task_file.stem)
+
 def write_output(folder: str | Path, title: str, content: str) -> Path:
     out_dir = Path(folder)
     out_dir.mkdir(parents=True, exist_ok=True)

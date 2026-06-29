@@ -6,17 +6,19 @@ from openai import OpenAI
 class ExpertAgent:
     name: str
     instructions: str
-    client: OpenAI
+    client: OpenAI | None
     model: str
 
     def review(self, task: str, knowledge: str) -> str:
+        if self.client is None:
+            raise RuntimeError("OpenAI-API-Client ist nicht konfiguriert.")
         prompt = f"""
 Du bist der Experte: {self.name}
 
-Unternehmens- und Projektwissen:
+Unternehmenswissen, Governance und Board-Kontext:
 {knowledge}
 
-Aufgabe:
+Zu bewertende Aufgabe, Anforderung oder Managementfrage:
 {task}
 
 Erstelle eine strukturierte Expertenbewertung mit:

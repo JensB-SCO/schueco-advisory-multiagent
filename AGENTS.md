@@ -8,6 +8,9 @@ Dieses Repository enthält ein Multi-Agent-System für die Weiterentwicklung der
 - Unternehmenswissen liegt als Markdown unter `knowledge/`.
 - Aufgaben liegen als Markdown unter `tasks/`.
 - Ergebnisse werden unter `outputs/` erzeugt.
+- Der TaskContext-Standard liegt unter `standards/task-context.md`; neue Tasks sollen Ausgangsfrage, Ziel und Deliverables klar auszeichnen.
+- Marketing ist als eigene Gremiumsrolle unter `agents/marketing.md` zu beruecksichtigen.
+- CFO, Executive Communication und Research & Evidence sind fuer Managementvorlagen als spezialisierte Rollen unter `agents/` zu beruecksichtigen.
 - `.env` niemals ändern oder committen.
 - Keine Secrets in Markdown-Dateien schreiben.
 
@@ -25,3 +28,7 @@ Jede finale Empfehlung braucht:
 10. Analytics Gate
 11. Risiken
 12. Entscheidungsempfehlung
+
+Marketing-relevante Empfehlungen muessen zusaetzlich Markenfit, Zielgruppenbotschaft, Kampagnenfaehigkeit, CTA-Logik und messbare Marketingwirkung benennen.
+
+Managementrelevante Empfehlungen muessen zusaetzlich Business Case/TCO/ROI, Evidenzbasis/Quellenqualitaet und eine entscheidungsreife Executive Storyline benennen.
