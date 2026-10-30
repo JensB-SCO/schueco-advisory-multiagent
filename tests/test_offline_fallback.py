@@ -59,6 +59,18 @@ class OfflineFallbackTest(unittest.TestCase):
         self.assertIn("Quellen", evidence_review)
         self.assertIn("Evidenzgrad", evidence_review)
 
+    def test_make_or_buy_management_output_is_substantive(self) -> None:
+        from pathlib import Path
+
+        task = Path("tasks/009_make_or_buy_coremedia.md").read_text(encoding="utf-8")
+        result = build_offline_recommendation(task, ["Review CFO"])
+        for expected in (
+            "Vorteile", "Risiken und Nachteile", "Notwendige Rahmenbedingungen",
+            "Konsequenz für das Management", "**Zu beschließen:**", "97.000",
+        ):
+            self.assertIn(expected, result)
+        self.assertNotIn("Keycloak", result)
+
     def test_recommendation_contains_required_sections(self) -> None:
         recommendation = build_offline_recommendation(
             "PROJEKTNAME: Testprojekt",

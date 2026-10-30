@@ -37,14 +37,14 @@ class BoardRoutingTest(unittest.TestCase):
         self.assertIn("cloud-agent-service-engineer/Skill.md", select_skills(context, roles))
 
     def test_task_009_reads_linked_evidence(self) -> None:
-        path = "tasks/009_make_or_buy_coremedia/Task_v2_make_or_buy_arvato_lissabon.md"
+        path = "tasks/009_make_or_buy_coremedia.md"
         if not Path(path).is_file():
             self.skipTest("Task 009 is not in this checkout")
         board = AdvisoryBoardOrchestrator(None, "offline")
         sources = board.load_task_sources(path, board.load_task(path))
         self.assertIn("MAKE OR BUY: ARVATO", sources)
         self.assertIn("Die vier zentralen Annahmen", sources)
-        self.assertIn("Quelle fehlt: outputs", sources)
+        self.assertIn("Vorteilen und Konsequenzen", sources)
 
     def test_selected_skill_paths_exist(self) -> None:
         context = parse_task_context("# Ausgangsfrage\n> **Soll die CoreMedia-Entwicklung intern erfolgen?**")

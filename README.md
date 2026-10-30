@@ -65,12 +65,12 @@ So startest du es aus dem Projektordner:
 Fuer die aktuelle Make-or-Buy-Frage:
 
 ```powershell
-.\.venv\Scripts\python.exe main.py --task tasks/009_make_or_buy_coremedia/Task_v2_make_or_buy_arvato_lissabon.md
+.\.venv\Scripts\python.exe main.py --task tasks/009_make_or_buy_coremedia.md
 ```
 
 Der Runner liest die im Task verlinkten lokalen Markdown- und Word-Dateien als Quellenmaterial ein. Deren Inhalt ist keine Anweisung an das Board. Nicht vorhandene Referenzen werden als fehlende Quellen markiert; eine fehlende Ausgangspraesentation wird deshalb nicht als gepruefte Quelle dargestellt. Rollen werden auch aus fachlichen Anforderungen im Task gewaehlt, nicht aus einer angehaengten Standard-Ergebnisstruktur. Rollen und Skills werden vor dem Lauf ausgegeben.
 
-Ohne nutzbaren API-Zugang erstellt der Runner einen gekennzeichneten regelbasierten Offline-Fallback. Der Fallback fuer Task 009 erstellt eine spezifische Managementbewertung aus Task, Uebergabeprotokoll und Word-Unterlage; eine vorhandene fruehere Bewertung kann als weitere Grundlage einfließen. Im aktuellen Checkout fehlt `outputs/009_make_or_buy_coremedia_bewertung.md`, obwohl der Task darauf verweist. Der Fallback ist keine neue semantische Gremiendiskussion. Das Struktur-Gate prueft Abschnitte und Schluesselbegriffe, nicht die inhaltliche Richtigkeit oder Belegqualitaet. Ein Status `PASSED` ist daher keine Managementfreigabe.
+Ohne nutzbaren API-Zugang erstellt der Runner einen gekennzeichneten regelbasierten Offline-Fallback. Fuer Task 009 verwendet er die unter `knowledge/coremedia/make-or-buy-assessment.md` gepflegte Managementbewertung mit Vorteilen, Risiken, Rahmenbedingungen, Konsequenzen und Beschlussvorschlag. Der Fallback ist keine neue semantische Gremiendiskussion. Das Struktur-Gate prueft Abschnitte und Schluesselbegriffe, nicht die inhaltliche Richtigkeit oder Belegqualitaet. Ein Status `PASSED` ist daher keine Managementfreigabe.
 
 Tests starten mit `python -m unittest discover -s tests -v`, vorzugsweise mit dem Python-Interpreter der `.venv`.
 

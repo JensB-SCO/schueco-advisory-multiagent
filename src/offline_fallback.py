@@ -191,7 +191,7 @@ naechste Schritte widerspruchsfrei und objektiv pruefbar sein.
 
 def build_offline_recommendation(task: str, reviews: list[str]) -> str:
     if "Make or Buy der CoreMedia-Entwicklung Arvato und Lissabon" in task:
-        previous = Path("outputs/009_make_or_buy_coremedia_bewertung.md")
+        previous = Path("knowledge/coremedia/make-or-buy-assessment.md")
         if previous.is_file():
             base = previous.read_text(encoding="utf-8")
         else:

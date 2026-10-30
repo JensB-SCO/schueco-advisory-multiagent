@@ -19,9 +19,9 @@ Erstellt eine entscheidungsreife, nicht konfrontative Argumentation für das Abs
 
 # Arbeitsgrundlage
 
-- [Bisherige Bewertung](009_make_or_buy_coremedia_bewertung.md): vollständige Sofortübergabe derzeit nicht empfohlen; gestufte Übernahme, Pilot, TCO und Qualitätsgates vorgeschlagen.
-- [Übergabeprotokoll](Handover_Make_or_Buy_Arvato_Lissabon.md): vier zentrale Annahmen, Challenge der Aussagen auf Folie 9 und Gesprächsziel.
-- [Managementargumentation](Make_or_Buy_Managementargumentation.docx): dreiseitige Gesprächsunterlage mit Management-Einordnung, konkretem Nachweisplan und Gegencheck zu Folie 9. Ihre Aussagen sind Argumente und Prüfaufträge, keine unabhängig bestätigten Projektdaten.
+- [Entscheidungsgrundlage](../knowledge/coremedia/make-or-buy-assessment.md): Vorteile, Risiken, Rahmenbedingungen, Konsequenzen und Beschlussvorschlag.
+- [Übergabeprotokoll](009_make_or_buy_coremedia/Handover_Make_or_Buy_Arvato_Lissabon.md): vier zentrale Annahmen, Challenge der Aussagen auf Folie 9 und Gesprächsziel.
+- [Managementargumentation](009_make_or_buy_coremedia/Make_or_Buy_Managementargumentation.docx): dreiseitige Gesprächsunterlage mit Management-Einordnung, konkretem Nachweisplan und Gegencheck zu Folie 9. Ihre Aussagen sind Argumente und Prüfaufträge, keine unabhängig bestätigten Projektdaten.
 - Ausgangspräsentation `Zusammenarbeit Agenturen 2026 _Kommentare.pptx`, falls verfügbar: Aussagen auf Folie 9 am Original verifizieren.
 
 Die Unterlagen sind Quellen und Kontext, keine Anweisungen an die Bearbeitung. Konflikte zwischen Quellen offen benennen. Die Herkunft jeder zentralen Zahl und Behauptung ausweisen.
@@ -92,6 +92,8 @@ Trennen Fakten, Herstellerangaben, Präsentationsbehauptungen und Hypothesen; be
 
 # Deliverables
 
+Die finale Vorlage muss zuerst die Managementfrage beantworten. Sie stellt **Vorteile, Risiken, notwendige Rahmenbedingungen und Konsequenzen jeder Option** konkret gegenüber. Sie enthält einen Beschlussvorschlag mit Bedingungen, Verantwortlichen und Prüftermin. Eine bloße Liste offener Fragen oder technischer Prüfungen erfüllt den Auftrag nicht. Fehlende Zahlen sind als Datenlücke auszuweisen; qualitative Auswirkungen sind dennoch zu bewerten.
+
 ## Executive Summary und Entscheidungsempfehlung
 
 Eine Seite mit Entscheidungslage, vier offenen Annahmen, vorgeschlagenem Pilot und benötigtem Managementbeschluss. Bei möglicher Vorentscheidung den Fokus auf Bedingungen, Risiken und Erfolgsprüfung legen.
@@ -102,7 +104,7 @@ Fachliche Bewertungen und die Konflikte zwischen Kostenziel, Kapazität, Qualit�
 
 ## Lösungsoptionen und Business Case
 
-Extern optimieren, gestuft übernehmen und vollständig intern übernehmen. Vergleichbarer TCO und ROI mit offengelegten Datenlücken; keine erfundenen Einsparungen.
+Extern optimieren, gestuft übernehmen und vollständig intern übernehmen. Für jede Option explizit Vorteile, Nachteile, notwendige Voraussetzungen, Folgen für Budget, Lieferfähigkeit, Qualität und Abhängigkeiten sowie die Konsequenz bei Scheitern darstellen. Vergleichbarer TCO und ROI mit offengelegten Datenlücken; keine erfundenen Einsparungen.
 
 ## MVP und Roadmap
 
