@@ -194,9 +194,50 @@ def build_offline_recommendation(task: str, reviews: list[str]) -> str:
         previous = Path("outputs/009_make_or_buy_coremedia_bewertung.md")
         if previous.is_file():
             base = previous.read_text(encoding="utf-8")
-            return f"""# Lokale Board-Auswertung zu Task 009
+        else:
+            base = """# Make or Buy der CoreMedia-Entwicklung
 
-> **Offline-Fallback:** Die OpenAI-API war nicht erreichbar. Diese Auswertung baut auf der vorhandenen Managementbewertung auf und ist keine neue semantische Agentendiskussion. {len(reviews)} regelbasierte Rollenreviews wurden erzeugt. Zahlen und Aussagen der Ausgangsfolie sind nicht unabhängig verifiziert.
+## 1. Executive Summary
+Die vollständige Ablösung von Arvato ist auf der vorliegenden Evidenz noch nicht entscheidungsreif. Ein begrenzter Pilot in Lissabon kann die strategische Zielrichtung prüfen. Bis zur Auswertung sollten Übergabe, Restleistungen und Eskalation geregelt bleiben.
+
+## 2. Expertenbewertungen
+CFO: Der Business Case braucht vergleichbare Gesamtkosten über 24 bis 36 Monate. Research & Evidence: Die Aussagen der Folie 9 sind Hypothesen; Originalfolie, Verträge und Ist-Daten fehlen. Executive Communication: Der Beschluss sollte Bedingungen für Umsetzung und Ausweitung festlegen. CoreMedia und Engineering: Kenntnisse der konkreten Installation, Entwicklungs- und Releasewege sind praktisch nachzuweisen. Marketing: Kampagnenfähigkeit, Markenfit, Zielgruppenbotschaft und CTA-Logik müssen während des Übergangs erhalten bleiben; messbare Marketingwirkung ist mit Baselines zu prüfen. Operations: Der separat verantwortete Betrieb braucht klare Schnittstellen, trägt aber nicht den Verlagerungsumfang von Digital Marketing.
+
+## 3. Zielkonflikte
+Kurzfristige Einsparung steht gegen Übergangs- und Einarbeitungskosten. Interne Kontrolle steht gegen fehlende Spezialkompetenz. Schnelle Übernahme steht gegen Qualitäts- und Terminrisiko.
+
+## 4. Lösungsoptionen
+Option A: Arvato-Leistungen und Vertrag gezielt optimieren. Option B: Lissabon übernimmt schrittweise mit befristeter externer Unterstützung. Option C: vollständige Sofortverlagerung. Option B ist zu prüfen; Option C ist ohne Nachweise zu Kapazität, Kosten und Leistung nicht freigabereif.
+
+Der TCO-Vergleich muss den heutigen und geplanten Leistungsumfang gleich abgrenzen. Interne Vollkosten, Rekrutierung, Einarbeitung, Steuerung in Deutschland, Reisen, Übergang, Vertretung, Werkzeuge und externe Spitzenlast gehören hinein. Die Angabe von 97.000 Euro pro Person „all in“ ist zu zerlegen. ROI und Break-even bleiben mangels belastbarer Ist- und Zielkosten offen; Basis-, Verzögerungs- und Fluktuationsszenario sind zu rechnen.
+
+## 5. MVP
+Ein repräsentatives, abgegrenztes CoreMedia-Aufgabenpaket unter Führung des Lissabonner Teams bearbeiten. Vorher Termintreue, Nacharbeiten, Ergebnisqualität, Releasefähigkeit und Zusammenarbeit als Abnahmekriterien festlegen. Arvato und Betrieb übernehmen klar benannte Zuarbeit.
+
+## 6. Roadmap
+Zuerst die Aufgaben der letzten zwölf Monate, Skills, Kosten und Verantwortungen erfassen. Danach Pilot und Wissenstransfer durchführen. Nach dokumentierter Auswertung Teilübernahme, Nachbesserung oder extern optimierten Bezug entscheiden. Termine und Owner sind im Gespräch festzulegen.
+
+## 7. CoreMedia-Anforderungen
+Content Types, Taxonomien, Workflows, Internationalisierung, DAM, Integrationen, Berechtigungen, Entwicklungsumgebungen, Deployment und Rollback inventarisieren. Benannte interne Fachkräfte müssen Änderungen an der Schüco-Installation selbständig nachweisen.
+
+## 8. SEO-/GEO-Anforderungen
+Vor und nach Änderungen Indexierung, Weiterleitungen, Metadaten, hreflang, strukturierte Daten und konsistente Inhalte für Such- und Antwortsysteme prüfen. Für rein organisatorische Schritte entstehen keine neuen Plattformanforderungen.
+
+## 9. Leadmanagement-Auswirkungen
+Formulare, CTA, CRM-Übergaben und Lead-Routing vor Pilot-Releases testen. Kampagnenstarts dürfen keine ungeklärte technische Übergabe haben.
+
+## 10. Analytics Gate
+Baseline und KPI für Durchlaufzeit, Termintreue, Nacharbeit, Änderungsfehler, Wiederherstellungszeit, Kosten je Leistung, Kampagnen-Termine, organische Performance und Lead-Funnel festlegen. Tracking und Datenqualität prüfen. Ein Dashboard oder Reporting zeigt Pilot und Referenzzeitraum mit Kontext für Saisonalität. Monitoring und Warnschwellen für produktive Releases mit dem verantwortlichen Betrieb abstimmen.
+
+## 11. Risiken
+Fehlendes CoreMedia-Wissen, Rekrutierungsrisiko Porto/Lissabon, Unterdeckung durch zwei Entwickler, unterschätzte Vollkosten, Wissensverlust, unklare Steuerung zwischen Deutschland, Portugal, Betrieb und Arvato sowie externe Restabhängigkeit. Je Risiko sind Owner, Gegenmaßnahme und Eskalation zu benennen. Architektur, Engineering, Security und Betrieb prüfen technische Übergabefähigkeit, Tests, Zugänge und Incident-Pfade im Pilot.
+
+## 12. Entscheidungsempfehlung
+Die strategische Zielrichtung kann weiterverfolgt werden. Eine vollständige Ablösung sollte erst nach Nachweisen für Kapazität, Wirtschaftlichkeit, Leistungsfähigkeit und Zusammenarbeit beschlossen werden. Im Gespräch sind Pilotumfang, Verantwortliche, Prüftermine und Entscheidungskriterien zu protokollieren. Die Aussage, CoreMedia-Entwickler in Portugal seien verfügbar, belegt weder konkrete Profile noch Starttermine in Lissabon. Kritik an Arvato ist getrennt von der Eignung des Zielmodells zu bewerten.
+"""
+        return f"""# Lokale Board-Auswertung zu Task 009
+
+> **Offline-Fallback:** Die OpenAI-API war nicht erreichbar. Diese Auswertung verwendet die vorhandenen lokalen Grundlagen und ist keine neue semantische Agentendiskussion. {len(reviews)} regelbasierte Rollenreviews wurden erzeugt. Zahlen und Aussagen der Ausgangsfolie sind nicht unabhängig verifiziert.
 
 ## Ergänzung zum Übergabeprotokoll und zur Word-Argumentation
 
@@ -208,7 +249,7 @@ Die Folie-9-Aussagen zu CoreMedia-Kompetenz in Portugal, 97.000 Euro pro Person 
 
 ---
 
-## Vorhandene Bewertung als fachliche Grundlage
+## Fachliche Bewertung
 
 {base}
 """

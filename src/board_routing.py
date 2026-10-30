@@ -23,9 +23,10 @@ TECHNICAL = {"coremedia", "architecture", "backend_api", "frontend", "engineerin
 MANAGEMENT = {"cfo", "executive_communication", "research_evidence", "strategy"}
 
 
-def select_roles(context: TaskContext, available: set[str]) -> list[str]:
+def select_roles(context: TaskContext, available: set[str], task: str = "") -> list[str]:
     """Choose a small board from the question and explicit task roles."""
-    signal = " ".join((context.title, context.management_question, context.mission, context.goal)).lower()
+    task_scope = re.split(r"^##?\s+(?:Erwartete Ergebnisstruktur|Deliverables|Finale Präsentation)", task, maxsplit=1, flags=re.MULTILINE | re.IGNORECASE)[0]
+    signal = " ".join((context.title, context.management_question, context.mission, context.goal, task_scope)).lower()
     roles = {"strategy", "research_evidence"}
     if context.is_management_assessment or re.search(r"budget|kosten|wirtschaft|make.or.buy|invest|management", signal):
         roles.update(MANAGEMENT)
@@ -35,7 +36,7 @@ def select_roles(context: TaskContext, available: set[str]) -> list[str]:
         roles.add("coremedia")
     if re.search(r"entwickl|implement|software|api|integration|technisch", signal):
         roles.update({"architecture", "engineering"})
-    if re.search(r"betrieb|incident|deployment|release", signal):
+    if re.search(r"betrieb|operations|incident|deployment|release", signal):
         roles.add("operations")
     if re.search(r"seo|suche|suchmaschine", signal):
         roles.add("seo")
@@ -45,6 +46,14 @@ def select_roles(context: TaskContext, available: set[str]) -> list[str]:
         roles.add("leadmanagement")
     if re.search(r"analytics|tracking|messbar", signal):
         roles.add("analytics")
+    if re.search(r"\bux\b|nutzerfuehrung|nutzerführung|bedien", signal):
+        roles.add("ux")
+    if re.search(r"\bapi\b|schnittstelle|datenbank", signal):
+        roles.add("backend_api")
+    if re.search(r"frontend|react|web.komponente", signal):
+        roles.add("frontend")
+    if re.search(r"security|datenschutz|berechtigung", signal):
+        roles.add("security")
     for requested in context.requested_roles:
         normalized = requested.lower().replace("&", " und ")
         for phrase, role in ROLE_ALIASES.items():

@@ -19,7 +19,7 @@ Erstellt eine entscheidungsreife, nicht konfrontative Argumentation für das Abs
 
 # Arbeitsgrundlage
 
-- [Bisherige Bewertung](../../outputs/009_make_or_buy_coremedia_bewertung.md): vollständige Sofortübergabe derzeit nicht empfohlen; gestufte Übernahme, Pilot, TCO und Qualitätsgates vorgeschlagen.
+- [Bisherige Bewertung](009_make_or_buy_coremedia_bewertung.md): vollständige Sofortübergabe derzeit nicht empfohlen; gestufte Übernahme, Pilot, TCO und Qualitätsgates vorgeschlagen.
 - [Übergabeprotokoll](Handover_Make_or_Buy_Arvato_Lissabon.md): vier zentrale Annahmen, Challenge der Aussagen auf Folie 9 und Gesprächsziel.
 - [Managementargumentation](Make_or_Buy_Managementargumentation.docx): dreiseitige Gesprächsunterlage mit Management-Einordnung, konkretem Nachweisplan und Gegencheck zu Folie 9. Ihre Aussagen sind Argumente und Prüfaufträge, keine unabhängig bestätigten Projektdaten.
 - Ausgangspräsentation `Zusammenarbeit Agenturen 2026 _Kommentare.pptx`, falls verfügbar: Aussagen auf Folie 9 am Original verifizieren.

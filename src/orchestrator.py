@@ -91,7 +91,10 @@ class AdvisoryBoardOrchestrator:
         parts = []
         for relative in dict.fromkeys(re.findall(r"\[[^]]+\]\(([^)]+)\)", task)):
             source = (Path(task_path).parent / relative).resolve()
-            if not source.is_relative_to(root) or not source.is_file():
+            if not source.is_relative_to(root):
+                continue
+            if not source.is_file():
+                parts.append(f"Quelle fehlt: {source.relative_to(root)}")
                 continue
             if source.suffix.lower() == ".md":
                 content = source.read_text(encoding="utf-8")
@@ -114,7 +117,7 @@ class AdvisoryBoardOrchestrator:
         task_sources = self.load_task_sources(task_path, task)
         task_context_block = task_context.to_prompt_block()
         available_agents = {agent.name: agent for agent in self.load_agents()}
-        selected_roles = select_roles(task_context, set(available_agents))
+        selected_roles = select_roles(task_context, set(available_agents), task)
         selected_skills = select_skills(task_context, selected_roles)
         skill_context = "\n\n".join(
             read_markdown_file(Path("skills") / name) for name in selected_skills

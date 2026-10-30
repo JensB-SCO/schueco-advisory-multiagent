@@ -44,13 +44,19 @@ class BoardRoutingTest(unittest.TestCase):
         sources = board.load_task_sources(path, board.load_task(path))
         self.assertIn("MAKE OR BUY: ARVATO", sources)
         self.assertIn("Die vier zentralen Annahmen", sources)
-        self.assertIn("TCO-Modell", sources)
+        self.assertIn("Quelle fehlt: outputs", sources)
 
     def test_selected_skill_paths_exist(self) -> None:
         context = parse_task_context("# Ausgangsfrage\n> **Soll die CoreMedia-Entwicklung intern erfolgen?**")
         roles = select_roles(context, AVAILABLE)
         for skill in select_skills(context, roles):
             self.assertTrue((Path("skills") / skill).is_file(), skill)
+
+    def test_freeform_task_scope_selects_requested_disciplines(self) -> None:
+        task = Path("tasks/003_branchennews_teamwork.md").read_text(encoding="utf-8")
+        context = parse_task_context(task)
+        roles = select_roles(context, AVAILABLE | {"ux", "backend_api", "frontend"}, task)
+        self.assertTrue({"ux", "coremedia", "analytics", "security", "operations", "backend_api", "frontend"} <= set(roles))
 
 
 if __name__ == "__main__":

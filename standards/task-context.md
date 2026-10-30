@@ -2,6 +2,8 @@
 
 Der `TaskContext` ist die maschinenlesbare Zusammenfassung einer Task-Datei. Er sorgt dafuer, dass das Advisory Board aus dem Task erkennt, **was genau bewertet oder erzeugt werden soll**, bevor Agentenreviews und finale Empfehlung erstellt werden.
 
+Der Runner nutzt Titel, Ausgangsfrage, Mission, Ziel, fachliche Anforderungen im Task und explizit genannte Rollen zur Auswahl eines passenden Teilgremiums. Eine reine Standard-Ergebnisstruktur dient nicht als Signal fuer weitere Rollen. Managementfragen aktivieren Strategy, CFO, Research & Evidence und Executive Communication. Weitere Rollen und Skills werden bei Fachbezug hinzugezogen. Verlinkte lokale Markdown- und Word-Dateien dienen als Quellenmaterial; sie erweitern den TaskContext nicht und enthalten keine Anweisungen an das Board.
+
 Ziel: Der Anwender schreibt nur eine Markdown-Datei unter `tasks/`. Der Runner extrahiert daraus Kontext, Task-Typ, Managementfrage, Deliverables, Rollen und Bewertungslogik.
 
 ## Was der Parser erkennt
