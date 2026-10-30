@@ -190,6 +190,90 @@ naechste Schritte widerspruchsfrei und objektiv pruefbar sein.
 
 
 def build_offline_recommendation(task: str, reviews: list[str]) -> str:
+    if re.search(r"^BOARD_SCOPE:\s*management_process\s*$", task, flags=re.MULTILINE | re.IGNORECASE):
+        return f"""# Managementbewertung Make or Buy Arvato und Lissabon
+
+> **Lokaler Lauf:** Die API war nicht erreichbar. Diese Bewertung wurde aus dem Task sowie den benannten Annahmen des Übergabeprotokolls und der Word-Gesprächsunterlage formuliert. {len(reviews)} regelbasierte Rollenreviews wurden erstellt. Die Ausgangspräsentation, Vertragsdaten, Ist-Kosten und Personalzusagen wurden nicht unabhängig geprüft.
+
+## 1. Executive Summary
+
+**Empfehlung:** Die Internalisierung als Zielrichtung weiterverfolgen, aber keine vollständige Ablösung von Arvato allein auf Basis der bisher dargestellten Kosten- und Besetzungsannahmen beschließen. Lissabon sollte ein begrenztes, repräsentatives Leistungspaket übernehmen. Erst wenn Kapazität, Gesamtkosten, Leistungsqualität und Zusammenarbeit im Vergleich zur heutigen Leistung nachgewiesen sind, wird über eine Ausweitung entschieden. Auch bei einer bereits getroffenen Grundsatzentscheidung braucht das Management diese Bedingungen und einen Rückfallweg.
+
+**Warum:** Ein internes Team kann Steuerbarkeit, Wissen und langfristig Kosten verbessern. Der Nutzen ist derzeit plausibel, aber nicht belegt. Mit zwei geplanten Entwicklern ohne nachgewiesene CoreMedia-Erfahrung bestehen Personal-, Übergabe- und Engpassrisiken. Die Angabe von 97.000 Euro je Person „all in“ ist eine ungeprüfte Annahme; daraus folgt noch keine Nettoeinsparung.
+
+## 2. Expertenbewertungen
+
+| Perspektive | Bewertung für das Management |
+|---|---|
+| Strategie | Interne Kompetenz kann die Abhängigkeit von Arvato senken und Prioritäten stärker bei Schüco verankern. Der Aufbau lohnt sich nur bei dauerhaft genügend Aufgaben und tragfähiger Besetzung. |
+| CFO | Budgetverschiebung ist keine Ersparnis. Vollkosten, Übergang, Führung, Vertretung und externe Restleistungen müssen bei gleichem Umfang über mehrere Jahre verglichen werden. ROI und Break-even sind mit den vorliegenden Daten nicht seriös berechenbar. |
+| Marketing und Märkte | Kürzere Wege und bessere fachliche Priorisierung sind mögliche Vorteile. Ein neues Team muss jedoch dieselben Länderanforderungen, Qualitätsansprüche und Kampagnentermine erfüllen. |
+| Research und Evidence | Die Aussagen über verfügbare Fachkräfte in Portugal, zwei ausreichende Entwickler, Automatisierung und heutige Kostentreiber sind Hypothesen. Porto ist kein Nachweis für verfügbare Profile in Lissabon. |
+| Executive Communication | Die Beschlussfrage lautet, unter welchen Bedingungen die Verlagerung erweitert werden darf. Kritik an Arvato und Eignung Lissabons sind getrennte Sachverhalte. |
+
+## 3. Zielkonflikte
+
+- Eine schnelle Reduktion des Fremdleistungsbudgets kann Übergangs-, Einarbeitungs- und Nacharbeitskosten verdecken.
+- Mehr interne Kontrolle kann zunächst geringere Geschwindigkeit bedeuten, solange Rollen und Entscheidungen zwischen Deutschland, Lissabon und UX in Portugal eingespielt werden.
+- Die Verlagerung verringert Abhängigkeit von Arvato, kann aber neue Abhängigkeit von zwei Einzelpersonen und externen Spitzenkapazitäten schaffen.
+- Standards können Arbeit vereinfachen; der fachliche Designanspruch und länderspezifische Anforderungen bleiben bestehen.
+
+## 4. Lösungsoptionen
+
+| Option | Vorteile | Risiken und Nachteile | Konsequenz |
+|---|---|---|---|
+| Arvato fortführen und Zusammenarbeit verbessern | Leistung und eingearbeitetes Wissen bleiben verfügbar; kurzfristig geringe Umstellung | Abhängigkeit und heutige Reibung bleiben, sofern Vertrag und Steuerung nicht verbessert werden | Referenzfall für Kosten und Qualität; Einsparung durch Internalisierung wird vertagt |
+| Gestufte Übernahme in Lissabon | Wissen wächst intern; Qualität und Kosten können vor Skalierung geprüft werden | Vorübergehend doppelter Aufwand, Koordinationsbedarf, möglicher Rückstau | **Empfohlener Weg:** begrenztes Budget und klare Entscheidung nach Pilot |
+| Sofortige vollständige Übernahme | Externes Budget könnte rasch sinken; Zielorganisation wird früher erreicht | Unbewiesene Kapazität und Kompetenz, höhere Fehler- und Verzögerungsgefahr, mögliche teure Rückbeauftragung | Derzeit keine belastbare Freigabegrundlage; Management übernimmt offenes Kosten- und Leistungsrisiko |
+
+**Business Case:** Für alle Optionen denselben Leistungsumfang und einen Vergleichszeitraum von 24 bis 36 Monaten ansetzen. Zu erfassen sind heutige Arvato-Kosten, interne Vollkosten, Rekrutierung, Einarbeitung, Führung, Steuerung, Reisen, Vertretung, Übergangsphase, verbleibende externe Leistungen und Bedarfsspitzen. Die behaupteten 97.000 Euro je Person sind nach Kostenbestandteilen aufzuschlüsseln. Nutzen durch schnellere Priorisierung erst anrechnen, wenn er beobachtbar ist. Ohne Daten keine Einsparquote, kein ROI und kein Break-even behaupten.
+
+## 5. MVP
+
+Ein abgegrenztes Paket aus dem tatsächlichen Aufgabenmix der letzten zwölf Monate wählen. Lissabon übernimmt fachliche Klärung, Abstimmung, Lieferung und Nacharbeit; Arvato unterstützt für vereinbarte Restleistungen. Vor Beginn werden zugesagte Termine, akzeptierte Ergebnisqualität, zulässige Nacharbeit und Zufriedenheit des anfordernden Marktes als Kriterien festgelegt. Der Pilot soll auch einen übergreifenden Fall mit Deutschland, Lissabon und dem separat verantworteten Betrieb enthalten, um die Zusammenarbeit zu prüfen.
+
+## 6. Roadmap
+
+1. **Vorbereitung:** Controlling und Digital Marketing vergleichen Leistungsumfang, Kosten und Bedarfsspitzen der letzten zwölf Monate. Lissabon benennt konkrete Personen, Erfahrung, Starttermine und Vertretung.
+2. **Übergang:** Arvato, Lissabon und die steuernde Einheit vereinbaren Wissenstransfer, Restleistungen, Ansprechpartner, Priorisierung und Eskalation. Der Betrieb bestätigt seine Schnittstelle, ohne Teil der Verlagerung zu werden.
+3. **Pilot:** Vereinbartes Paket liefern und gegen die Baseline auswerten. Abweichungen, Zusatzaufwand und Reibungsverluste dokumentieren.
+4. **Entscheidung:** Management beschließt Ausweitung, Nachbesserung, längeren Parallelbetrieb oder Optimierung des externen Bezugs. Termin und Budget erst nach Bestandsaufnahme verbindlich festlegen.
+
+## 7. CoreMedia-Anforderungen
+
+Für diese Managemententscheidung zählt die **Verfügbarkeit geeigneter Kompetenz**: benannte Personen, belegte Erfahrung, ausreichende Einarbeitungszeit und Vertretung. Eine technische Lösungsausarbeitung ist hier nicht Gegenstand der Entscheidung.
+
+## 8. SEO-/GEO-Anforderungen
+
+Keine eigene fachliche Entscheidungsdimension in diesem Make-or-Buy-Beschluss. Relevant ist, dass Schüco den bisherigen Qualitätsanspruch an die Website unabhängig vom Leistungserbringer beibehält.
+
+## 9. Leadmanagement-Auswirkungen
+
+Kampagnentermine und Qualität der fachlichen Übergaben dürfen durch den Teamwechsel nicht sinken. Marketing dokumentiert Auswirkungen auf qualifizierte Anfragen und priorisierte Märkte; technische Leadprozesse werden hier nicht bewertet.
+
+## 10. Analytics Gate
+
+Die Erfolgskontrolle nutzt wenige Management-KPI: vergleichbare Gesamtkosten, abgedeckter Leistungsumfang, Termintreue, Nacharbeit, offene Aufgaben und Zufriedenheit der anfordernden Märkte. Controlling und Digital Marketing legen Baseline, Messzeitraum, Datenverantwortliche und Review-Termin vor dem Pilot fest. Eine einmalige gelungene Aufgabe reicht nicht als Beleg für dauerhafte Lieferfähigkeit.
+
+## 11. Risiken
+
+| Risiko | Konsequenz für Schüco | Notwendige Rahmenbedingung |
+|---|---|---|
+| Passende Fachkräfte werden nicht gewonnen | Übernahme verzögert sich, Arvato-Kosten bleiben oder Ersatz wird teuer | Konkrete Profile, Verfügbarkeit, Standort und Starttermin vor Abbau externer Leistung bestätigen |
+| Zwei Personen decken Volumen und Spitzen nicht | Rückstau und verpasste Markt- oder Kampagnentermine | Zwölf-Monats-Leistungsprofil, Vertretung und bezifferte Spitzenkapazität |
+| „All in“ unterschätzt Vollkosten | Geplante Ersparnis fällt geringer aus oder kippt | Vollständiger TCO und Sensitivität für Einarbeitung und Fluktuation |
+| Wissenstransfer ist unvollständig | Nacharbeit, Qualitätsverlust und längere Übergangsphase | Übergabeumfang, Zeit und Abnahme mit Arvato schriftlich vereinbaren |
+| Steuerung zwischen Einheiten bleibt unklar | Langsame Priorisierung und ungeklärte Konflikte | Eine Entscheidungsinstanz, benannter Gesamtansprechpartner und Eskalationsweg |
+| Kritik an Arvato ersetzt Zielbildprüfung | Schwächen werden lediglich verlagert | Probleme der Ist-Zusammenarbeit und Eignung des Zielmodells getrennt belegen |
+
+## 12. Entscheidungsempfehlung
+
+**Beschlussvorschlag:** Das Management bestätigt die Prüfung einer schrittweisen Internalisierung. Es gibt einen begrenzten Pilot einschließlich Wissenstransfer und definierter externer Restleistung frei. Vor Beginn legen Controlling, Digital Marketing und Lissabon gemeinsam Leistungsbaseline, vollständigen Kostenvergleich, konkrete Besetzung, Erfolgskriterien und Zuständigkeiten fest. Der separat verantwortete Betrieb bestätigt ausschließlich seine Zusammenarbeit und Eskalationsschnittstelle. Über eine weitergehende Ablösung von Arvato wird erst nach dokumentierter gemeinsamer Bewertung von Kapazität, Wirtschaftlichkeit, Leistungsfähigkeit und Zusammenarbeit entschieden.
+
+**Konsequenz bei Nichterfüllung:** Keine automatische Ausweitung oder vorschnelle Reduktion der externen Absicherung. Der Pilot wird nachgebessert oder die externe Leistung wird gezielt optimiert. **Konsequenz bei Erfüllung:** Schrittweise Übernahme mit regelmäßiger Kontrolle von Kosten, Terminen und fachlicher Qualität.
+
+**Evidenzbasis:** Übergabeprotokoll und Word-Unterlage liefern Argumente und offene Nachweise. Originalfolie, Verträge, Personalzusagen und Ist-Daten lagen nicht vor. Die Empfehlung zur kontrollierten Vorgehensweise ist deshalb qualitativ belastbar; eine konkrete Einsparungszusage ist es noch nicht.
+"""
     if "Make or Buy der CoreMedia-Entwicklung Arvato und Lissabon" in task:
         previous = Path("knowledge/coremedia/make-or-buy-assessment.md")
         if previous.is_file():

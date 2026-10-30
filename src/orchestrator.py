@@ -124,7 +124,8 @@ class AdvisoryBoardOrchestrator:
         )
         print(f"Aktive Rollen: {', '.join(selected_roles)}")
         print(f"Aktive Skills: {', '.join(selected_skills) or 'keine'}")
-        knowledge = read_markdown_folder(self.knowledge_dir)
+        management_only = "BOARD_SCOPE: management_process" in task
+        knowledge = "" if management_only else read_markdown_folder(self.knowledge_dir)
         governance = self.load_governance(selected_roles)
         task_output_dir = build_task_output_dir(task_path)
         reviews_output_dir = task_output_dir / "reviews"
@@ -194,6 +195,7 @@ Wichtig: Die Empfehlung muss die 12 Pflichtabschnitte aus der Charter enthalten.
 Wichtig: Richte Struktur, Tonalitaet und Bewertung primaer am TaskContext aus. Wenn der Task eine Managementfrage oder Anforderungsbewertung ist, bewerte die gestellte Frage und schreibe keinen Projektauftrag.
 Wichtig: Die Empfehlung muss bei Managementvorlagen, Budgetentscheidungen oder strategischen Empfehlungen das Financial Gate, Evidence Gate und Executive Communication Gate enthalten.
 Wichtig: Fach-Gates nur bei Bezug zur Managementfrage anwenden. Nicht relevante Pflichtabschnitte kurz als nicht einschlaegig begruenden. Technische Gates nur bei technischer Umsetzung oder technischen Risiken vertiefen.
+Wichtig: Bei BOARD_SCOPE management_process ausschliesslich fachliche, wirtschaftliche, personelle und prozessuale Folgen bewerten. Keine technischen Fragen oder technischen Empfehlungen ausfuehren.
 """
         if offline_mode:
             recommendation = build_offline_recommendation(task, reviews)

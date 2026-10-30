@@ -60,6 +60,8 @@ class AnalyticsGate:
         for label, terms in self.required_terms.items():
             if active_roles is not None and label in role_for_gate and role_for_gate[label] not in active_roles:
                 continue
+            if active_roles is not None and label in {"Tracking", "Dashboard", "Monitoring", "Datenqualitaet"} and "analytics" not in active_roles:
+                continue
             if not any(term in lower for term in terms):
                 missing.append(label)
         if missing:

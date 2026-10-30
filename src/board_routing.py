@@ -25,6 +25,8 @@ MANAGEMENT = {"cfo", "executive_communication", "research_evidence", "strategy"}
 
 def select_roles(context: TaskContext, available: set[str], task: str = "") -> list[str]:
     """Choose a small board from the question and explicit task roles."""
+    if re.search(r"^BOARD_SCOPE:\s*management_process\s*$", task, flags=re.MULTILINE | re.IGNORECASE):
+        return sorted({"strategy", "cfo", "research_evidence", "executive_communication", "marketing"} & available)
     task_scope = re.split(r"^##?\s+(?:Erwartete Ergebnisstruktur|Deliverables|Finale Präsentation)", task, maxsplit=1, flags=re.MULTILINE | re.IGNORECASE)[0]
     signal = " ".join((context.title, context.management_question, context.mission, context.goal, task_scope)).lower()
     roles = {"strategy", "research_evidence"}

@@ -1,6 +1,10 @@
 # Schüco Digital Advisory Board
 ## Task v2.0 – Make or Buy der CoreMedia-Entwicklung Arvato und Lissabon
 
+BOARD_SCOPE: management_process
+
+Dieser Lauf beantwortet die Managementfrage ausschließlich aus fachlicher, wirtschaftlicher, personeller und prozessualer Sicht. Technische Architektur, Implementierung, SEO/GEO, Tracking und Betriebstechnik sind keine Prüfaufträge. Die durch das Repository verlangten Pflichtabschnitte zu diesen Themen werden knapp als nicht entscheidungsrelevant eingeordnet.
+
 # Mission
 
 Bereitet eine sachliche Managementbewertung und eine Gesprächsgrundlage zur möglichen Verlagerung bisheriger CoreMedia-Entwicklungsleistungen von Arvato an eine interne Division in Lissabon vor. Prüft die Tragfähigkeit des Zielmodells anhand von Nachweisen. Bewertet zugleich, wie eine bereits grundsätzlich getroffene strategische Entscheidung kontrolliert umgesetzt und überprüft werden könnte. Eine solche Vorentscheidung ist als mögliche Gesprächslage, nicht als bestätigte Tatsache zu behandeln.
@@ -19,7 +23,6 @@ Erstellt eine entscheidungsreife, nicht konfrontative Argumentation für das Abs
 
 # Arbeitsgrundlage
 
-- [Entscheidungsgrundlage](../knowledge/coremedia/make-or-buy-assessment.md): Vorteile, Risiken, Rahmenbedingungen, Konsequenzen und Beschlussvorschlag.
 - [Übergabeprotokoll](009_make_or_buy_coremedia/Handover_Make_or_Buy_Arvato_Lissabon.md): vier zentrale Annahmen, Challenge der Aussagen auf Folie 9 und Gesprächsziel.
 - [Managementargumentation](009_make_or_buy_coremedia/Make_or_Buy_Managementargumentation.docx): dreiseitige Gesprächsunterlage mit Management-Einordnung, konkretem Nachweisplan und Gegencheck zu Folie 9. Ihre Aussagen sind Argumente und Prüfaufträge, keine unabhängig bestätigten Projektdaten.
 - Ausgangspräsentation `Zusammenarbeit Agenturen 2026 _Kommentare.pptx`, falls verfügbar: Aussagen auf Folie 9 am Original verifizieren.
@@ -70,21 +73,13 @@ Entwerft ein begrenztes, repräsentatives Aufgabenpaket mit gemeinsam vereinbart
 
 Prüft TCO, ROI, Break-even, Sensitivitäten, Finanzierung des Übergangs und Vergleichbarkeit der Leistungsumfänge.
 
-## CoreMedia Architect und Engineering
+## Strategy Director
 
-Prüfen Skills, Architektur, Integrationen, Entwicklungs- und Releasefähigkeit sowie Qualität der technischen Übergabe.
+Prüft strategische Vor- und Nachteile, organisatorische Abhängigkeiten und die Konsequenzen jeder Option.
 
-## SRE und Operations Lead
+## Marketing Lead
 
-Prüft ausschließlich die Schnittstellen zum separat verantworteten Betrieb, die Betriebsabnahme, Incident-Zuarbeit und Eskalation.
-
-## Marketing Lead und Leadmanagement
-
-Prüfen Markenfit, Zielgruppenbotschaft, Kampagnenfähigkeit, CTA-Logik, Leadprozesse und messbare Marketingwirkung während des Übergangs.
-
-## SEO, GEO und Analytics
-
-Prüfen Schutz der organischen Sichtbarkeit, strukturierte Inhalte, Tracking-Baseline und Messbarkeit des Pilot-Erfolgs.
+Prüft die Auswirkungen auf Länderanforderungen, Kampagnenplanung, Markenqualität und fachliche Priorisierung.
 
 ## Research & Evidence und Executive Communication
 
@@ -110,13 +105,13 @@ Extern optimieren, gestuft übernehmen und vollständig intern übernehmen. Für
 
 Pilotpaket, Zeitplan, Owner, Nachweise, Abnahmekriterien und Entscheidungsgates.
 
-## CoreMedia-Anforderungen
+## Rahmenbedingungen und Konsequenzen
 
-Content Types, Taxonomien, Workflows, Wiederverwendung, Internationalisierung, DAM, Integrationen, Governance, Entwicklungs- und Releasewissen.
+Benötigte Kompetenzen, Besetzung, Vertretung, Wissenstransfer, Prozess- und Entscheidungsverantwortung sowie Folgen für Kosten, Geschwindigkeit und Qualität. Keine technischen Lösungsdetails.
 
-## Analytics Gate
+## Erfolgskontrolle
 
-Vorher-Nachher-Messung von Termintreue, Nacharbeit, Änderungsfehlern, Wiederherstellung, Kosten je Leistung, organischer Performance und Lead-Funnel mit klaren Datenverantwortlichen.
+Wenige Managementkennzahlen: vergleichbare Gesamtkosten, abgedeckter Leistungsumfang, Termintreue, Nacharbeit und Zufriedenheit der anfordernden Märkte. Keine technischen Tracking-Anforderungen.
 
 ## Risiken und Gesprächsprotokoll
 

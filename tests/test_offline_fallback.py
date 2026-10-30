@@ -65,11 +65,24 @@ class OfflineFallbackTest(unittest.TestCase):
         task = Path("tasks/009_make_or_buy_coremedia.md").read_text(encoding="utf-8")
         result = build_offline_recommendation(task, ["Review CFO"])
         for expected in (
-            "Vorteile", "Risiken und Nachteile", "Notwendige Rahmenbedingungen",
-            "Konsequenz für das Management", "**Zu beschließen:**", "97.000",
+            "Vorteile", "Risiken und Nachteile", "Notwendige Rahmenbedingung",
+            "Konsequenz für Schüco", "**Beschlussvorschlag:**", "97.000",
         ):
             self.assertIn(expected, result)
         self.assertNotIn("Keycloak", result)
+
+    def test_management_process_output_has_no_technical_review(self) -> None:
+        from pathlib import Path
+
+        task = Path("tasks/009_make_or_buy_coremedia.md").read_text(encoding="utf-8")
+        result = build_offline_recommendation(task, ["Review CFO"])
+        self.assertIn("Gesamtkosten", result)
+        self.assertIn("Konsequenz für Schüco", result)
+        self.assertNotIn("Content Types", result)
+        self.assertEqual(
+            "PASSED",
+            AnalyticsGate().validate(result, {"cfo", "executive_communication", "marketing", "research_evidence", "strategy"}).status,
+        )
 
     def test_recommendation_contains_required_sections(self) -> None:
         recommendation = build_offline_recommendation(

@@ -44,7 +44,7 @@ class BoardRoutingTest(unittest.TestCase):
         sources = board.load_task_sources(path, board.load_task(path))
         self.assertIn("MAKE OR BUY: ARVATO", sources)
         self.assertIn("Die vier zentralen Annahmen", sources)
-        self.assertIn("Vorteilen und Konsequenzen", sources)
+        self.assertNotIn("make-or-buy-assessment.md", sources)
 
     def test_selected_skill_paths_exist(self) -> None:
         context = parse_task_context("# Ausgangsfrage\n> **Soll die CoreMedia-Entwicklung intern erfolgen?**")
@@ -57,6 +57,15 @@ class BoardRoutingTest(unittest.TestCase):
         context = parse_task_context(task)
         roles = select_roles(context, AVAILABLE | {"ux", "backend_api", "frontend"}, task)
         self.assertTrue({"ux", "coremedia", "analytics", "security", "operations", "backend_api", "frontend"} <= set(roles))
+
+    def test_management_process_scope_excludes_technical_roles(self) -> None:
+        task = Path("tasks/009_make_or_buy_coremedia.md").read_text(encoding="utf-8")
+        roles = select_roles(parse_task_context(task), AVAILABLE, task)
+        self.assertEqual(
+            ["cfo", "executive_communication", "marketing", "research_evidence", "strategy"],
+            roles,
+        )
+        self.assertEqual(["management-decision/Skill.md"], select_skills(parse_task_context(task), roles))
 
 
 if __name__ == "__main__":
