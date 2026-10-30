@@ -1,5 +1,5 @@
 # Schüco Digital Advisory Board
-## Task v2.0 – Strategische Bewertung des Einsatzes von KI-Coding-Systemen im Marketing
+## Task v2.1 - Strategische Bewertung des Einsatzes von KI-Coding-Systemen im Marketing
 
 ---
 
@@ -51,8 +51,31 @@ Die Empfehlung muss
 - technologisch
 - organisatorisch
 - strategisch
+- datenschutz- und mitbestimmungssensibel
 
 begründet sein.
+
+---
+
+# Nicht-Ziele und harte Leitplanken
+
+Die Empfehlung bewertet **die gestellte Anforderung**, nicht einen Projektauftrag, nicht eine Ausschreibung und nicht die Leistung einzelner Mitarbeitender.
+
+Der Einsatz von KI-Coding-Systemen darf **nicht** als Instrument zur Leistungsueberwachung von Mitarbeitenden verstanden oder empfohlen werden.
+
+Ausdruecklich ausgeschlossen sind:
+
+- individuelles Mitarbeiter-Monitoring
+- personenbezogene Produktivitaetsmessung
+- Rankings, Scorings oder Vergleiche einzelner Mitarbeitender
+- Rueckschluesse auf individuelle Arbeitsleistung, Arbeitsgeschwindigkeit oder Qualitaet einzelner Personen
+- verdeckte Kontrolle von Nutzung, Prompt-Verhalten, Code-Beitraegen oder Output-Mengen
+- personenbezogene Dashboards fuer Fuehrungskraefte
+- automatisierte Ableitungen fuer Zielvereinbarungen, Leistungsbeurteilungen oder arbeitsrechtliche Massnahmen
+
+Zulaessig sind nur aggregierte, nicht personenbezogene Steuerungssignale auf Prozess-, Use-Case- oder Portfolioebene, sofern Datenschutz, Mitbestimmung und Governance dies erlauben.
+
+Wenn fuer Business Case, Governance oder Pilotbewertung Messwerte vorgeschlagen werden, muessen diese **nicht personenbezogen**, **aggregiert**, **zweckgebunden** und **mitbestimmungskonform** sein.
 
 ---
 
@@ -80,10 +103,14 @@ Jeder Experte beantwortet:
 
 Jede Persona bewertet zusätzlich:
 
-- Nutzen (1–10)
-- Risiko (1–10)
-- Reifegrad (1–10)
-- Priorität (1–10)
+- strategischer Nutzen (1-10)
+- wirtschaftlicher Nutzen (1-10)
+- technologischer Nutzen (1-10)
+- organisatorischer Reifegrad (1-10)
+- Risiko (1-10)
+- Prioritaet (1-10)
+
+Wichtig: Diese Bewertungen beziehen sich auf die Initiative und ihre Managementreife, **nicht** auf einzelne Mitarbeitende oder Teams.
 
 ---
 
@@ -115,12 +142,14 @@ warum der Einsatz scheitern könnte.
 Sie bewertet u.a.
 
 - Datenschutz
+- Mitbestimmung
 - Governance
 - ROI
 - Akzeptanz
 - Shadow AI
 - Vendor Lock-in
 - organisatorische Risiken
+- Risiken durch missverstandene Leistungs- oder Nutzungskennzahlen
 
 ---
 
@@ -183,6 +212,8 @@ Zusätzlich werden bewertet:
 - Risiken
 - Investitionen
 - Umsetzbarkeit
+- Governance- und Datenschutzanforderungen
+- Ausschluss personenbezogener Leistungsmessung
 
 ---
 
@@ -209,6 +240,10 @@ Welcher Nutzen?
 Welche Risiken?
 
 Welche Investitionen?
+
+Welche Governance-Leitplanken sind unverhandelbar?
+
+Wie wird ausgeschlossen, dass KI-Coding-Systeme zur individuellen Leistungskontrolle genutzt werden?
 
 Was passiert, wenn wir nichts tun?
 
@@ -275,7 +310,7 @@ Bewertet
 
 Bewertet
 
-- Produktivität
+- technische Qualitaet
 - Wartbarkeit
 - Qualität
 - Testing
@@ -291,6 +326,7 @@ Bewertet
 - Kampagnen
 - Content
 - Time-to-Market
+- Nutzen fuer Marketingteams ohne individuelle Leistungskontrolle
 
 ---
 
@@ -312,8 +348,11 @@ Bewertet
 
 - KPIs
 - ROI
-- Erfolgsmessung
+- aggregierte Erfolgskriterien
+- Datenschutzkonformitaet
 - Governance
+
+Der Analytics Lead darf **keine** personenbezogene Leistungsmessung, kein Mitarbeiter-Monitoring und keine Rueckschluesse auf individuelle Arbeitsleistung empfehlen.
 
 ---
 
@@ -343,9 +382,11 @@ Bewertet
 
 - Datenschutz
 - Compliance
+- Mitbestimmung
 - Shadow AI
 - Governance
 - IP
+- Schutz vor personenbezogener Leistungsueberwachung
 
 ---
 
@@ -357,6 +398,8 @@ Bewertet
 - Organisation
 - Adoption
 - Enablement
+- Vertrauen und Akzeptanz
+- klare Kommunikation gegen Leistungskontroll-Aengste
 
 ---
 
@@ -400,16 +443,26 @@ Jede Persona bewertet
 
 ---
 
+## Datenschutz- und Mitbestimmungsvertraeglichkeit
+
+1-10
+
+Diese Dimension bewertet ausdruecklich, ob die Empfehlung ohne personenbezogene Leistungsueberwachung, ohne Mitarbeiter-Monitoring und ohne individuelle Rueckschluesse umsetzbar ist.
+
+---
+
 # Bewertungskriterien
 
 Das Board bewertet insbesondere
 
 ## Business
 
-- Produktivität
-- Geschwindigkeit
+- Effizienzpotenzial auf Prozess- und Portfolioebene
+- Geschwindigkeit von Kampagnen- und Content-Prozessen
 - Innovation
 - Skalierung
+
+Keine Bewertung individueller Mitarbeiterproduktivitaet.
 
 ---
 
@@ -440,6 +493,9 @@ Das Board bewertet insbesondere
 - Rollen
 - Schulungen
 - Betriebsmodell
+- Akzeptanz
+- Mitbestimmung
+- Schutz vor Kontrollwahrnehmung
 
 ---
 
@@ -447,8 +503,23 @@ Das Board bewertet insbesondere
 
 - Investitionen
 - Lizenzen
-- Einsparungen
+- Einsparpotenziale auf Prozess- oder Portfolioebene
 - ROI
+- Sensitivitaeten
+
+Keine ROI-Logik auf Basis individueller Leistungsprofile.
+
+---
+
+## Datenschutz und Compliance
+
+- Datenklassifizierung
+- Toolfreigabe
+- IP-Schutz
+- Mitbestimmung
+- Zweckbindung
+- Aggregation
+- Ausschluss personenbezogener Leistungs- und Nutzungsprofile
 
 ---
 
@@ -500,7 +571,7 @@ Bewertung
 
 ## Zielarchitektur
 
-Visualisierung
+Visualisierungsvorschlag fuer eine kontrollierte, governance-konforme Nutzung.
 
 ---
 
@@ -522,15 +593,29 @@ Visualisierung
 
 - Nutzen
 
-- Einsparungen
+- Einsparpotenziale auf Prozess- oder Portfolioebene
 
 - ROI
+
+- Sensitivitaeten
+
+- Annahmen
+
+- Ausschluss personenbezogener Leistungskennzahlen
 
 ---
 
 ## Governance
 
-Empfehlungen
+Empfehlungen zu:
+
+- Toolfreigabe
+- Datenklassifizierung
+- Prompt- und Code-Regeln
+- Review-Prozessen
+- Mitbestimmung
+- Datenschutz
+- Schutz vor personenbezogener Leistungskontrolle
 
 ---
 
@@ -560,6 +645,7 @@ Jede Folie muss enthalten:
 - Sprechernotizen
 - Quellen
 - Handlungsempfehlung
+- relevante Governance-Leitplanken
 
 ---
 
@@ -576,10 +662,13 @@ Jede Persona vergibt eine Bewertung von 1–10 für:
 - Wirtschaftlichkeit
 - Visualisierung
 - Entscheidungsqualität
+- Datenschutz- und Mitbestimmungsvertraeglichkeit
 
 Erst wenn der Durchschnitt mindestens **9,0 Punkte** beträgt, gilt die Präsentation als freigegeben.
 
 Andernfalls wird sie automatisch überarbeitet.
+
+Diese Qualitaetsbewertung bezieht sich ausschliesslich auf das Board-Ergebnis, nicht auf einzelne Mitarbeitende.
 
 ---
 
@@ -603,6 +692,7 @@ Die Empfehlung enthält:
 - Investitionen
 - Maßnahmenplan
 - Executive Summary
+- klare Leitplanke gegen personenbezogene Leistungsmessung
 
 Die Präsentation muss unmittelbar für einen Bereichsleiter-, Geschäftsführungs- oder Vorstandstermin verwendbar sein.
 
