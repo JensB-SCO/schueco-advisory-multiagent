@@ -21,7 +21,7 @@ class BoardRoutingTest(unittest.TestCase):
         roles = select_roles(context, AVAILABLE)
         self.assertTrue({"strategy", "cfo", "executive_communication", "research_evidence"} <= set(roles))
         self.assertFalse({"engineering", "coremedia", "architecture", "operations"} & set(roles))
-        self.assertEqual(["management-decision/Skill.md"], select_skills(context, roles))
+        self.assertEqual(["management-decision/SKILL.md"], select_skills(context, roles))
 
     def test_coremedia_handover_uses_explicit_roles(self) -> None:
         context = parse_task_context("""# Ausgangsfrage
@@ -65,7 +65,7 @@ class BoardRoutingTest(unittest.TestCase):
             ["cfo", "executive_communication", "marketing", "research_evidence", "strategy"],
             roles,
         )
-        self.assertEqual(["management-decision/Skill.md"], select_skills(parse_task_context(task), roles))
+        self.assertEqual(["management-decision/SKILL.md"], select_skills(parse_task_context(task), roles))
 
 
 if __name__ == "__main__":

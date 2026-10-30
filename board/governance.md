@@ -2,7 +2,7 @@
 
 ## Entscheidungslogik
 
-Eine Empfehlung ist nur entscheidungsreif, wenn alle relevanten Gates bewertet wurden und offene Risiken explizit genannt sind.
+Eine Empfehlung ist nur entscheidungsreif, wenn alle fuer den Task relevanten Gates bewertet wurden und offene Risiken explizit genannt sind. Managemententscheidungen vergleichen neben Kosten auch Leistung, Time to Market, Zusammenarbeit, Kapazitaet, Qualitaet und Konsequenzen eines Scheiterns, soweit diese Dimensionen betroffen sind.
 
 ## Freigabestatus
 
@@ -10,7 +10,7 @@ Eine Empfehlung ist nur entscheidungsreif, wenn alle relevanten Gates bewertet w
 - READY WITH RISKS: Empfehlung ist entscheidungsreif, aber Risiken oder Abhaengigkeiten muessen gesteuert werden.
 - BLOCKED: Empfehlung verletzt ein Pflichtgate oder enthaelt nicht genug Informationen fuer eine belastbare Entscheidung.
 
-## Pflichtgates
+## Verfuegbare Gates
 
 - Business Gate
 - Financial Gate
@@ -25,6 +25,8 @@ Eine Empfehlung ist nur entscheidungsreif, wenn alle relevanten Gates bewertet w
 - Engineering Gate
 - Security Gate
 - Operations Gate
+
+Financial, Evidence und Executive Communication sind bei Managementvorlagen verbindlich. Weitere Gates werden nach dem Gegenstand der Entscheidung aktiviert. Die zwoelf Pflichtabschnitte der finalen Empfehlung bleiben bestehen; nicht einschlaegige Themen werden knapp begruendet.
 
 ## Eskalationsregeln
 

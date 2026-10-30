@@ -2,9 +2,13 @@
 
 ## Bewertungsdimensionen
 
-Jede Option wird anhand dieser Dimensionen bewertet:
+Jede Option wird anhand der fuer die konkrete Entscheidung relevanten Dimensionen bewertet. Kosten sind ein Kriterium, aber nicht automatisch das entscheidende. Nicht einschlaegige Dimensionen werden kurz begruendet, nicht kuenstlich bewertet:
 
 - Business Impact
+- Leistungsfaehigkeit, Qualitaet und Time to Market
+- Zusammenarbeit, Entscheidungswege und Uebergaben
+- Kompetenzen, Kapazitaet und personelle Abhaengigkeiten
+- Uebergangsrisiko und Rueckfallfaehigkeit
 - Finanzielle Tragfaehigkeit und ROI
 - Evidenzgrad und Quellenqualitaet
 - Managementklarheit und Entscheidungstauglichkeit
@@ -26,7 +30,9 @@ Bewerte jede Dimension mit:
 - 3 = stark
 - 2 = ausreichend
 - 1 = schwach
-- 0 = nicht erfuellt oder unbekannt
+- 0 = nicht erfuellt
+
+Unbekannte Werte werden als **offen** mit benoetigtem Nachweis ausgewiesen. Sie erhalten keinen scheinbar praezisen Zahlenwert. Gewichte und nicht verhandelbare Mindestbedingungen werden vor der Bewertung festgelegt.
 
 ## Entscheidung
 
@@ -37,4 +43,4 @@ Bewerte jede Dimension mit:
 
 ## Konsensregel
 
-Eine Empfehlung darf nur finalisiert werden, wenn Strategy, CFO, Executive Communication, Research/Evidence, Marketing, UX, SEO/GEO, Analytics und Engineering keine blockierenden Einwaende haben. Security und Operations besitzen Vetorecht bei kritischen Risiken.
+Eine Empfehlung darf nur finalisiert werden, wenn die fuer den Task aktivierten Rollen keine unbehandelten blockierenden Einwaende haben. CFO, Executive Communication und Research/Evidence sind bei Managementvorlagen verbindlich. Marketing wird bei markt-, marken- oder kampagnenrelevanten Fragen beteiligt. Security und Operations koennen technische Empfehlungen bei kritischen Risiken blockieren; bei rein organisatorischen Entscheidungen werden sie nur bei betroffener Verantwortung hinzugezogen.

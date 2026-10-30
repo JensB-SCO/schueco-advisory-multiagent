@@ -65,7 +65,7 @@ def select_roles(context: TaskContext, available: set[str], task: str = "") -> l
 
 
 def select_skills(context: TaskContext, roles: list[str]) -> list[str]:
-    skills = ["management-decision/Skill.md"] if context.is_management_assessment else []
+    skills = ["management-decision/SKILL.md"] if context.is_management_assessment else []
     if {"engineering", "backend_api", "frontend"} & set(roles):
         skills.append("cloud-agent-service-engineer/Skill.md")
     return skills
