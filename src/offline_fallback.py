@@ -93,6 +93,16 @@ def is_insufficient_quota_error(error: BaseException) -> bool:
     )
 
 
+def is_api_unavailable_error(error: BaseException) -> bool:
+    if is_insufficient_quota_error(error):
+        return True
+    name = type(error).__name__.lower()
+    return name in {
+        "apiconnectionerror", "apitimeouterror", "authenticationerror",
+        "permissiondeniederror", "notfounderror", "ratelimiterror",
+    }
+
+
 def _project_name(task: str) -> str:
     context = parse_task_context(task)
     if context.display_name:
@@ -180,11 +190,40 @@ naechste Schritte widerspruchsfrei und objektiv pruefbar sein.
 
 
 def build_offline_recommendation(task: str, reviews: list[str]) -> str:
+    if "Make or Buy der CoreMedia-Entwicklung Arvato und Lissabon" in task:
+        previous = Path("outputs/009_make_or_buy_coremedia_bewertung.md")
+        if previous.is_file():
+            base = previous.read_text(encoding="utf-8")
+            return f"""# Lokale Board-Auswertung zu Task 009
+
+> **Offline-Fallback:** Die OpenAI-API war nicht erreichbar. Diese Auswertung baut auf der vorhandenen Managementbewertung auf und ist keine neue semantische Agentendiskussion. {len(reviews)} regelbasierte Rollenreviews wurden erzeugt. Zahlen und Aussagen der Ausgangsfolie sind nicht unabhängig verifiziert.
+
+## Ergänzung zum Übergabeprotokoll und zur Word-Argumentation
+
+Die strategische Verlagerung kann als Zielrichtung bestehen. Vor einer Ausweitung müssen vier Annahmen anhand vereinbarter Nachweise geprüft werden: **Kapazität** anhand der Aufgaben der letzten zwölf Monate und des geplanten Teams; **Wirtschaftlichkeit** anhand vergleichbarer Gesamtkosten einschließlich Übergang und externer Restleistungen; **Leistungsfähigkeit** anhand eines begrenzten Piloten mit Termintreue, Nacharbeit und Ergebnisqualität; **Zusammenarbeit** anhand einer abgestimmten Verantwortungsübersicht für Lissabon, den separat verantworteten Betrieb und gegebenenfalls Arvato. Der Betrieb gehört nicht zum Verlagerungsumfang von Digital Marketing.
+
+Die Folie-9-Aussagen zu CoreMedia-Kompetenz in Portugal, 97.000 Euro pro Person „all in“, zwei Entwicklern durch Automatisierung, Länderanforderungen, Standards und externer Spitzenlast sind **zu prüfende Behauptungen**. Insbesondere belegt eine CoreMedia-Präsenz in Porto keine Rekrutierbarkeit in Lissabon. Steuerung in Deutschland, UX in Portugal und Entwicklung in Lissabon benötigen dokumentierte Priorisierung, Entscheidungswege und Koordination. Für jede Behauptung sind Quelle, Nachweis, Owner und Prüfpunkt zu protokollieren.
+
+**Protokollfähiger Beschlussvorschlag:** Die Umsetzung erfolgt auf Basis dokumentierter Annahmen. Kapazität, Gesamtkosten, Leistungsfähigkeit und Zusammenarbeit werden anhand vereinbarter Nachweise überprüft. Über eine Ausweitung wird erst nach gemeinsamer Bewertung entschieden.
+
+---
+
+## Vorhandene Bewertung als fachliche Grundlage
+
+{base}
+"""
     if _is_ai_coding_assessment(task):
         return build_ai_coding_systems_recommendation(task, reviews)
 
     project = _project_name(task)
     review_count = len(reviews)
+
+    management = parse_task_context(task).is_management_assessment
+    opening = (
+        "Die Managementfrage ist nur mit belastbaren Annahmen, vergleichbaren Optionen und klaren Entscheidungskriterien entscheidungsreif."
+        if management else
+        "Der Projektauftrag ist freigabefaehig mit verbindlichen Aenderungen, sofern offene Entscheidungen vor Ausschreibung geschlossen werden."
+    )
 
     return f"""\
 # Offline-Board-Empfehlung: {project}
@@ -196,12 +235,7 @@ def build_offline_recommendation(task: str, reviews: list[str]) -> str:
 
 ## 1. Executive Summary
 
-Der Projektauftrag ist **freigabefaehig mit verbindlichen Aenderungen**, sofern
-die unten genannten offenen Entscheidungen vor Ausschreibung geschlossen oder
-als belastbare Annahmen in die Vergabeunterlagen aufgenommen werden. Kritisch
-sind insbesondere eindeutige Verantwortlichkeiten, messbare
-Akzeptanzkriterien, Plattform-/Security-Entscheidungen und die Trennung von MVP
-und optionalen Leistungen.
+{opening}
 
 ## 2. Expertenbewertungen
 

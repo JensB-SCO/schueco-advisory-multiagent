@@ -47,13 +47,19 @@ class AnalyticsGate:
         "Operations Gate": ["operations gate", "betrieb", "rollback", "health"],
     }
 
-    def validate(self, text: str) -> GateResult:
+    def validate(self, text: str, active_roles: set[str] | None = None) -> GateResult:
         lower = text.lower()
         missing: list[str] = []
         for label, terms in self.required_sections.items():
             if not any(term in lower for term in terms):
                 missing.append(f"Pflichtabschnitt: {label}")
+        role_for_gate = {
+            "Architecture Gate": "architecture", "Engineering Gate": "engineering",
+            "Security Gate": "security", "Operations Gate": "operations",
+        }
         for label, terms in self.required_terms.items():
+            if active_roles is not None and label in role_for_gate and role_for_gate[label] not in active_roles:
+                continue
             if not any(term in lower for term in terms):
                 missing.append(label)
         if missing:

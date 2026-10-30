@@ -19,9 +19,9 @@ skills/      Wiederverwendbare Skills, z. B. Cloud Agent & Service Engineer
 
 ## Advisory Board 4.0
 
-Der Runner laedt alle Markdown-Agenten aus `agents/` ausser `chairman.md`. Die finale Empfehlung wird durch den Chairman erzeugt und gegen die 4.0-Pflichtstruktur geprueft:
+Der Runner waehlt anhand von Managementfrage, TaskContext und explizit genannten Rollen ein passendes Teilgremium aus `agents/`. Der Chairman erstellt die finale Empfehlung. Managementfragen erhalten Strategy, CFO, Research & Evidence und Executive Communication; technische Fachrollen und der Cloud-Engineering-Skill kommen nur bei Bezug zur Aufgabe hinzu. `skills/management-decision.skill.md` fuehrt wirtschaftliche und organisatorische Entscheidungen. Die finale Empfehlung folgt der 4.0-Pflichtstruktur:
 
-Das Gremium umfasst Rollen fuer Strategy, Business/Sales, CFO, Marketing, Executive Communication, Research & Evidence, UX, Design, SEO, GEO, Leadmanagement, Analytics, CoreMedia, Architecture, Backend/API, Frontend, Engineering, Security und Operations. Neue Rollen werden als Markdown-Datei unter `agents/` gepflegt und automatisch in den Lauf aufgenommen.
+Das Gremium verfuegt ueber Rollen fuer Strategy, Business/Sales, CFO, Marketing, Executive Communication, Research & Evidence, UX, Design, SEO, GEO, Leadmanagement, Analytics, CoreMedia, Architecture, Backend/API, Frontend, Engineering, Security und Operations. Neue Rollen werden als Markdown-Datei unter `agents/` gepflegt; fuer ihre automatische Auswahl wird `src/board_routing.py` erweitert. Im Task genannte Rollen haben Vorrang.
 
 1. Executive Summary
 2. Expertenbewertungen
